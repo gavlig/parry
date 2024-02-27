@@ -130,6 +130,10 @@ pub fn clip_aabb_line(
         }
     }
 
+    if near_side == 0 {
+        return None;
+    }
+
     let near = if near_diag {
         (tmin, -dir.normalize(), near_side)
     } else {
